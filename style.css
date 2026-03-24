@@ -1,0 +1,70 @@
+/* Reset and General Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; background: #fce4ec; overflow-x: hidden; }
+
+/* Floating Hearts Background */
+.hearts-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+}
+.heart {
+    position: absolute; bottom: -10%; color: #ff4081;
+    animation: floatUp 6s linear infinite; opacity: 0.6;
+}
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #f8bbd0, #e1bee7); text-align: center;
+    position: relative; z-index: 1;
+}
+.reveal-text {
+    font-size: 3rem; color: #ad1457; margin-bottom: 10px;
+    animation: fadeInUp 1.2s ease-out;
+}
+.fade-in {
+    font-size: 1.2rem; color: #6a1b9a; margin-bottom: 25px;
+    animation: fadeInUp 1.8s ease-out;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gallery - Optimized for 3 Images */
+.gallery { padding: 80px 20px; text-align: center; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Side-by-side */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+@media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: 1fr; } /* Stack on phones */
+}
+.photo-card img {
+    width: 100%; height: 350px; object-fit: cover;
+    border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.4s ease;
+}
+.photo-card:hover img { transform: scale(1.05); }
+
+/* Message Section */
+.message-card {
+    background: white; padding: 40px; border-radius: 30px;
+    max-width: 600px; margin: 40px auto; text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.btn {
+    padding: 12px 30px; background: #e91e63; color: white;
+    text-decoration: none; border-radius: 50px; font-weight: bold;
+    transition: 0.3s;
+}
+.btn:hover { background: #c2185b; transform: scale(1.05); }
